@@ -1,0 +1,34 @@
+<?php
+/**
+ * Media Organization System Loader
+ *
+ * Usage: Include this file in your theme's functions.php or a custom plugin file.
+ *
+ * @package Hussainas_Media_System
+ * @version     1.0.0
+ * @author      Hussain Ahmed Shrabon
+ * @license     MIT  GPL-2.0-or-later
+ * @link        https://github.com/iamhussaina
+ * @textdomain  hussainas
+ 
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+    exit; 
+}
+
+// Include the core logic class.
+require_once __DIR__ . '/src/class-hussainas-media-manager.php';
+
+/**
+ * Bootstraps the Media Manager.
+ *
+ * Ensures the class is loaded only once.
+ */
+function hussainas_start_media_system() {
+    $media_manager = new Hussainas_Media_Manager();
+    $media_manager->init();
+}
+
+// Initialize the system.
+hussainas_start_media_system();
